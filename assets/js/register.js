@@ -1,5 +1,26 @@
 let captchaAnswer = null;
+document.addEventListener("DOMContentLoaded", ()=>{
+    
 
+    fetch("../components/header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+          // Load footer
+        fetch('../components/footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Footer not found');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+                document.getElementById('footer').innerHTML = '<p>Error loading footer</p>';
+            });
+});
 // Generate a simple math captcha, e.g. "3 + 7 = ?"
 function generateCaptcha() {
     const num1 = Math.floor(Math.random() * 9) + 1; // 1–9

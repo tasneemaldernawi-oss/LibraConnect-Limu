@@ -1,0 +1,31 @@
+/* ELEGANT MUTED LIBRARY THEME - Sophisticated & Coordinated */
+:root {
+    --dusty-blue: #6B8E9C;
+    --sage-green: #8A9B8F;
+    --warm-taupe: #A89B8C;
+    --soft-cream: #F8F7F4;
+    --charcoal: #4A4A4A;
+    --mauve: #9A8B8F;
+    --dusty-rose: #B8A6A6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    background: linear-gradient(135deg, #FCFCFC 0%, #F8F7F4 100%);
+    color: var(--charcoal);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

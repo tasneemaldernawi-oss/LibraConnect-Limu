@@ -1,0 +1,52 @@
+  .bg-borrowed{
+            background-color: #6B8E9C;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #1d6a6f;
+            color: #fff;
+            
+        }
+        .bg-overdue{
+            background-color: rgb(251, 228, 232);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ca61a1;
+
+        }
+        .bg-fines{
+            background-color: rgb(251, 248, 228);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #dada74;
+        }
+        .text-color{
+            color: #010101;
+        }
+        .bg-details{
+            background-color: #CFD9DD;
+            border-radius: 5px;
+            padding: 10px;
+            color: #7e7070;
+        }
+        .bg-btn{
+            background-color: #6B8E9C !important;
+            color: #fff !important; 
+            padding: 8px !important;
+
+        }
+        .card-body{
+            border: #6B8E9C 1px solid;
+            border-radius: 5px;
+        }
+        .p-color{
+            color: rgb(158, 152, 152);
+        }
+        .bg-line{
+            background-color: #9A8B8F;
+        }
+        .note-box{
+            background-color: #CFD9DD;
+            color: #7e7070;
+            padding: 8px;
+            border-radius: 5px;
+        }

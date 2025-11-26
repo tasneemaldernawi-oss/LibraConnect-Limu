@@ -1,0 +1,285 @@
+/* ==================================
+    BORROW PAGE STYLES (MATCHING THEME)
+===================================== */
+/* ELEGANT MUTED LIBRARY THEME - Sophisticated & Coordinated */
+:root {
+    --dusty-blue: #6B8E9C;
+    --sage-green: #8A9B8F;
+    --warm-taupe: #A89B8C;
+    --soft-cream: #F8F7F4;
+    --charcoal: #4A4A4A;
+    --mauve: #9A8B8F;
+    --dusty-rose: #B8A6A6;
+}
+
+
+
+/* Container and Titles */
+.borrow-container {
+    /* Use the standard container for centering */
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto; /* Add vertical space below the header */
+    padding: 0 20px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--warm-taupe);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+/* --- Content Grid Layout (Two Columns) --- */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Available books (2 parts) | Selected books (1 part) */
+    gap: 30px;
+}
+
+/* Sections */
+.available-books-section, 
+.selected-books-section {
+    background: var(--soft-cream);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    height: fit-content; /* Ensure selected box doesn't stretch */
+}
+
+.available-books-section h2,
+.selected-books-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dusty-blue);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(107, 142, 156, 0.15);
+    padding-bottom: 10px;
+}
+
+/* --- Book List Items --- */
+
+.book-list {
+    max-height: 500px; /* Limits the height */
+    overflow-y: auto; /* Adds scrollbar when needed */
+    padding-right: 15px; /* Space for the scrollbar */
+    margin-bottom: 20px;
+}
+
+.book-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.book-item:hover {
+    background: rgba(107, 142, 156, 0.05);
+    border-color: var(--dusty-blue);
+}
+
+.book-item input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.2); /* Make checkbox slightly bigger */
+    accent-color: var(--sage-green); /* Use sage green for the checkbox color */
+    cursor: pointer;
+}
+
+.book-item .book-info {
+    flex-grow: 1;
+}
+
+.book-item .title {
+    font-weight: 600;
+    color: var(--charcoal);
+    display: block;
+    font-size: 1.05rem;
+}
+
+.book-item .author {
+    font-size: 0.9rem;
+    color: var(--warm-taupe);
+}
+
+/* Unavailable Books (Muted Style) */
+.book-item.unavailable {
+    opacity: 0.6;
+    background: #EEEEEE;
+    cursor: not-allowed;
+    border-left: 5px solid var(--dusty-rose);
+}
+
+.book-item.unavailable:hover {
+    background: #EEEEEE;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.book-item .status {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--mauve);
+    margin-left: 10px;
+}
+
+/* --- Borrow Button --- */
+
+#borrow-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--dusty-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(107, 142, 156, 0.4);
+}
+
+#borrow-button:hover:not(:disabled) {
+    background: var(--sage-green);
+    box-shadow: 0 4px 10px rgba(138, 155, 143, 0.4);
+    transform: translateY(-1px);
+}
+
+#borrow-button:disabled {
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.4);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* --- Selected Books Sidebar --- */
+
+.selected-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 150px;
+    border: 1px dashed var(--warm-taupe);
+}
+
+#selected-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#selected-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--charcoal);
+    font-size: 0.95rem;
+}
+
+#selected-list li:last-child {
+    border-bottom: none;
+}
+
+#no-selection-message {
+    text-align: center;
+    color: var(--warm-taupe);
+    padding: 40px 10px;
+    font-style: italic;
+    font-size: 1.0rem;
+}
+
+
+/* --- Responsive Adjustments (Main Content) --- */
+
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    
+    .available-books-section, 
+    .selected-books-section {
+        margin-bottom: 20px;
+    }
+} 
+
+/* ==================================
+    CLEAN FOOTER STYLES (MATCHING THEME)
+===================================== */
+footer {
+    /* Assuming a .container exists in the footer HTML for width capping */
+    background: var(--soft-cream);
+    color: var(--charcoal);
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--charcoal);
+    font-weight: 600;
+}
+
+.footer-links {
+    list-style: none;
+    /* FIX: Ensure padding is removed for unstyled look (was causing the indent) */
+    padding-left: 0; 
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    color: var(--charcoal);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    color: var(--dusty-blue);
+    opacity: 1;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    color: var(--charcoal);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* FIX: Add Responsive Media Query for Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        text-align: center;
+    }
+    .footer-links {
+        /* Center list items when stacked */
+        display: inline-block; 
+    }
+}
