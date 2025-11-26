@@ -1,0 +1,56 @@
+<!-- includes/header.html - ONLY the header content, no HTML/HEAD/BODY tags -->
+<header class="navbar" id="main-nav">
+    <div class="container">
+        <div class="nav-brand">
+            <a href="index.html">LibraConnect</a>
+        </div>
+        
+        <div class="menu-icon" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Book Catalog</a></li>
+            <li><a href="borrow.html">Borrow Books</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="/pages/register.html">Login/Register</a></li>
+        </ul>
+    </div>
+</header>
+
+<script>
+    // Mobile Menu Toggle Script
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('open');
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (mainNav && !mainNav.contains(event.target)) {
+                mainNav.classList.remove('open');
+            }
+        });
+        
+        // Set active page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        
+        navLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || 
+               (currentPage === '' && linkHref === 'index.html') ||
+               (linkHref !== 'index.html' && currentPage.includes(linkHref.replace('.html', '')))) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+</script>
