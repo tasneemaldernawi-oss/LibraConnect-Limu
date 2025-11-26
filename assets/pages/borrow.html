@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Borrow Books - LibraConnect</title>
+
+    <link rel="stylesheet" href="assets/css/borrow.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+   
+
+    <div id="header"></div>
+
+
+
+    <div class="borrow-container py-5">
+
+                   <!-- HERO SECTION -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="fw-bold">Borrow Books</h1>
+
+            <p class="lead"></p>
+
+        </div>
+
+
+
+        <div class="content-grid">
+
+           
+
+            <div class="available-books-section">
+
+                <h2>Available Books</h2>
+
+               
+
+                <div class="book-list" id="available-list">
+
+                    <label class="book-item"><input type="checkbox" data-title="The Great Gatsby" data-author="F. Scott Fitzgerald"><span class="book-info"><span class="title">The Great Gatsby</span> <span class="author">by F. Scott Fitzgerald</span></span></label>
+
+                    <label class="book-item"><input type="checkbox" data-title="To Kill a Mockingbird" data-author="Harper Lee"><span class="book-info"><span class="title">To Kill a Mockingbird</span> <span class="author">by Harper Lee</span></span></label>
+
+                    <label class="book-item"><input type="checkbox" data-title="1984" data-author="George Orwell"><span class="book-info"><span class="title">1984</span> <span class="author">by George Orwell</span></span></label>
+
+                    <label class="book-item"><input type="checkbox" data-title="Pride and Prejudice" data-author="Jane Austen"><span class="book-info"><span class="title">Pride and Prejudice</span> <span class="author">by Jane Austen</span></span></label>
+
+                    <label class="book-item"><input type="checkbox" data-title="The Hobbit" data-author="J.R.R. Tolkien"><span class="book-info"><span class="title">The Hobbit</span> <span class="author">by J.R.R. Tolkien</span></span></label>
+
+                    <label class="book-item unavailable"><input type="checkbox" data-title="Harry Potter and the Philosopher's Stone" data-author="J.K. Rowling" disabled><span class="book-info"><span class="title">Harry Potter and the Philosopher's Stone</span> <span class="author">by J.K. Rowling</span><span class="status">Currently unavailable</span></span></label>
+
+                    <label class="book-item"><input type="checkbox" data-title="The Catcher in the Rye" data-author="J.D. Salinger"><span class="book-info"><span class="title">The Catcher in the Rye</span> <span class="author">by J.D. Salinger</span></span></label>
+
+                </div>
+
+               
+
+                <button id="borrow-button" disabled>Borrow Selected Books (0)</button>
+
+
+
+            </div>
+
+
+
+            <div class="selected-books-section">
+
+                <h2>Selected Books</h2>
+
+                <div class="selected-box">
+
+                    <ul id="selected-list"></ul>
+
+                    <p id="no-selection-message">No books selected yet</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   
+
+    <div id="footer"></div>
+
+
+
+    <!-- ONLY THESE TWO SCRIPTS - REMOVE THE DUPLICATE HEADER LOADING -->
+
+    <script src="assets/js/borrow.js"></script>
+
+    <script src="assets/js/borrow.js"></script>
+
+</body>
+
+</html>
