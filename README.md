@@ -1,7 +1,7 @@
 # LibraConnect-Limu
 **📚 LibraConnect – Simple Library Borrowing Website**
 
-LibraConnect is a small multi-page library website built by students using HTML, Bootstrap, and JavaScript.
+LibraConnect is a small multi-page library website built by using HTML, Bootstrap, and JavaScript.
 Each team member is responsible for one page and must include data rendering (using arrays/objects) and basic interactivity (DOM events).
 
 **🚀 Project Overview**
